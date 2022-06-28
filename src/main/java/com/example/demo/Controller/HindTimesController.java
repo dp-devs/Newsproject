@@ -95,7 +95,12 @@ public class HindTimesController {
             	 else if(name.equals("media:content"))
             	 {
             		 news.setImage(itemChildElement.getAttribute("url"));
-            	 }else if(name.equals("pubDate"))
+            	 }
+            	 else if(name.equals("link"))
+            	 {
+            		 news.setLink(itemChildElement.getTextContent());
+            	 }
+            	 else if(name.equals("pubDate"))
             	 {
             		 String pub_date=itemChildElement.getTextContent();
             		 news.setPubDate(pub_date);

@@ -10,6 +10,7 @@ public class News {
 	private String pubDate;
 	private String posted_time;
 	private String source;
+	private String link;
 	private String views;
 	public String getTitle() {
 		return title;
@@ -52,6 +53,12 @@ public class News {
 	}
 	public void setSource(String source) {
 		this.source = source;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
 	}
 	
 	

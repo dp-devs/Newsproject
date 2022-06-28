@@ -106,6 +106,7 @@ public class ToiController {
         	  
           news.setTitle(ans.getTitle());
           news.setPubDate(ans.getPubDate());
+          news.setLink(ans.getLink());
           news.setImage(img_url);
           news.setSource("Times Of India");
           int view=(int)(Math.random()*1000);
