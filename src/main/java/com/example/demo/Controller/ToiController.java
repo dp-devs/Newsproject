@@ -146,7 +146,30 @@ public class ToiController {
       
       
       ArrayList<News> htnews=htCont.getHTNews(place);
-      list_news.addAll(htnews);
+      
+      ArrayList<News> sum_news=new ArrayList<News>();
+      int sum=list_news.size() +htnews.size();
+      int ht_index=0;
+      int toi_index=0;
+      for(int i=0;i<sum;i++)
+      {
+    	  if((ht_index!=htnews.size()-1) && (toi_index!=list_news.size()-1))
+    	  {
+    	  
+	    	  if(i%2==0)
+	    	  {
+	    		  sum_news.add(list_news.get(toi_index));
+	    		  toi_index++;
+	    	  }
+	    	  else
+	    	  {
+	    		  sum_news.add(htnews.get(ht_index));
+	    		  ht_index++;
+	    	  }
+    	  }
+    	  
+    	  
+      }
       //System.out.println("ht news"+htnews);
       //htnews.forEach(i->System.out.println(i.getSource()));
      
@@ -156,7 +179,7 @@ public class ToiController {
 	 // Serializer ser = new Persister();
       Response response=new Response();
       response.setStatus("ok"); 
-      response.setData(list_news);
+      response.setData(sum_news);
       ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
       String json = ow.writeValueAsString(response);
      // System.out.println("response"+json);
