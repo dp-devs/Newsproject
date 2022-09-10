@@ -107,6 +107,14 @@ public class ToiController {
           news.setTitle(ans.getTitle());
           news.setPubDate(ans.getPubDate());
           news.setLink(ans.getLink());
+          //removing space at last 
+          if((img_url.charAt(img_url.length()-1))==' ')
+          {System.out.println("yes it is space");
+          StringBuilder sb = new StringBuilder(img_url);
+            sb.deleteCharAt(img_url.length()-1);
+            img_url=sb.toString();        	  
+        		    }
+          
           news.setImage(img_url);
           news.setSource("Times Of India");
           int view=(int)(Math.random()*1000);
