@@ -9,7 +9,7 @@ RUN mvn clean package -DskipTests
 # Package stage
 #
 FROM openjdk:8-jdk-slim
-COPY --from=build /target/Newsproject-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /target/Newsproject.jar app.jar
 # ENV PORT=8080
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
